@@ -21,13 +21,21 @@ destination = $("#destination-input").val().trim();
 firstTrainTime = $("#first-train-time-input").val().trim();
 tFrequency = $("#frequency-input").val().trim();
 
-database.ref().push({
-    name: trainName ,
-    destination: destination,
-    firstTrainTime: firstTrainTime,
-    frequency: tFrequency  
-  });
+
+firebase.database().ref('users/' + userId + 'newData').set({
+  username: name,
+  email: email,
+  profile_picture : imageUrl
 });
+
+
+// database.ref().push({
+//     name: trainName ,
+//     destination: destination,
+//     firstTrainTime: firstTrainTime,
+//     frequency: tFrequency  
+//   });
+// });
 
 // FirebaseUI config.
 var uiConfig = {
