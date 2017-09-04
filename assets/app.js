@@ -22,7 +22,7 @@ firstTrainTime = $("#first-train-time-input").val().trim();
 tFrequency = $("#frequency-input").val().trim();
 
 
-firebase.database().ref('users/' + userId + 'newData').set({
+firebase.database().ref('users/' + userId + 'newData').push({
   username: name,
   email: email,
   profile_picture : imageUrl
