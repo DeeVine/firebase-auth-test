@@ -81,3 +81,22 @@ initApp = function() {
 window.addEventListener('load', function() {
   initApp()
 });
+
+$("#form-submission").on("click", function(event) {
+console.log("submit button");
+
+// Prevent default behavior
+event.preventDefault();
+
+trainName = $("#train-name-input").val().trim();
+destination = $("#destination-input").val().trim();
+firstTrainTime = $("#first-train-time-input").val().trim();
+tFrequency = $("#frequency-input").val().trim();
+
+database.ref().push({
+    name: trainName ,
+    destination: destination,
+    firstTrainTime: firstTrainTime,
+    frequency: tFrequency  
+  });
+});
