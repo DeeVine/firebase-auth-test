@@ -13,29 +13,28 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 $("#form-submission").on("click", function(event) {
-// Prevent default behavior
-event.preventDefault();
+	// Prevent default behavior
+	event.preventDefault();
 
-trainName = $("#train-name-input").val().trim();
-destination = $("#destination-input").val().trim();
-firstTrainTime = $("#first-train-time-input").val().trim();
-tFrequency = $("#frequency-input").val().trim();
+	trainName = $("#train-name-input").val().trim();
+	destination = $("#destination-input").val().trim();
+	firstTrainTime = $("#first-train-time-input").val().trim();
+	tFrequency = $("#frequency-input").val().trim();
 
 
-firebase.database().ref('users/' + userId + 'newData').push({
-  username: name,
-  email: email,
-  profile_picture : imageUrl
+	firebase.database().ref('users/' + userId + 'newData').set({
+	  username: name,
+	  email: email,
+	  profile_picture : imageUrl
+	});
+
+	// database.ref().push({
+	//   name: trainName ,
+	//   destination: destination,
+	//   firstTrainTime: firstTrainTime,
+	//   frequency: tFrequency  
+	// });
 });
-
-
-// database.ref().push({
-//     name: trainName ,
-//     destination: destination,
-//     firstTrainTime: firstTrainTime,
-//     frequency: tFrequency  
-//   });
-// });
 
 // FirebaseUI config.
 var uiConfig = {
