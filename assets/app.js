@@ -50,6 +50,14 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
 // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
 
+function writeUserData(userId, name, email, imageUrl) {
+  firebase.database().ref('users/' + userId).set({
+    username: name,
+    email: email,
+    profile_picture : imageUrl
+  });
+}
+
 initApp = function() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
@@ -61,6 +69,10 @@ initApp = function() {
       var uid = user.uid;
       var phoneNumber = user.phoneNumber;
       var providerData = user.providerData;
+
+      //write user data to database
+      writeUserData(uid, displayName, email, photoURL);
+
       user.getIdToken().then(function(accessToken) {
         document.getElementById('sign-in-status').textContent = 'Signed in';
         document.getElementById('sign-in').textContent = 'Sign out';
