@@ -92,7 +92,7 @@ initApp = function() {
 
       //write user data to database
       writeUserData(uid, displayName, email, photoURL);
-      push(uid);
+      pushUserData(uid);
 
       user.getIdToken().then(function(accessToken) {
         document.getElementById('sign-in-status').textContent = 'Signed in';
