@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <title>Sample FirebaseUI App</title>
-
+  
+    <!-- bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <!-- Jquery CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Firebase UI CDN -->
@@ -14,22 +16,10 @@
        * Firebase Console > Overview > Add Firebase to your web app. *
        ***************************************************************************************** -->
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyDbBmeMeapR-eJi70V-gXj5StSIzxgtpSE",
-        authDomain: "train-scheduler-95d1e.firebaseapp.com",
-        databaseURL: "https://train-scheduler-95d1e.firebaseio.com",
-        projectId: "train-scheduler-95d1e",
-        storageBucket: "train-scheduler-95d1e.appspot.com",
-        messagingSenderId: "608903893456"
-      };
-      firebase.initializeApp(config);
-    </script>
         
-  <script src="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" />
-    <script type="text/javascript">
+  <!--   <script type="text/javascript">
       // FirebaseUI config.
       var uiConfig = {
         signInSuccessUrl: 'https://deevine.github.io/firebase-auth-test/',
@@ -50,69 +40,106 @@
       var ui = new firebaseui.auth.AuthUI(firebase.auth());
       // The start method will wait until the DOM is loaded.
       ui.start('#firebaseui-auth-container', uiConfig);
-    </script>
+    </script> -->
 
   <!-- Authentication status checker -->
     <script type="text/javascript">
-      initApp = function() {
-        firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
-            // User is signed in.
-            var displayName = user.displayName;
-            var email = user.email;
-            var emailVerified = user.emailVerified;
-            var photoURL = user.photoURL;
-            var uid = user.uid;
-            var phoneNumber = user.phoneNumber;
-            var providerData = user.providerData;
-            user.getIdToken().then(function(accessToken) {
-              document.getElementById('sign-in-status').textContent = 'Signed in';
-              document.getElementById('sign-in').textContent = 'Sign out';
-              document.getElementById('account-details').textContent = JSON.stringify({
-                displayName: displayName,
-                email: email,
-                emailVerified: emailVerified,
-                phoneNumber: phoneNumber,
-                photoURL: photoURL,
-                uid: uid,
-                accessToken: accessToken,
-                providerData: providerData
-              }, null, '  ');
-            });
-            //add sign out function
+      // initApp = function() {
+      //   firebase.auth().onAuthStateChanged(function(user) {
+      //     if (user) {
+      //       // User is signed in.
+      //       var displayName = user.displayName;
+      //       var email = user.email;
+      //       var emailVerified = user.emailVerified;
+      //       var photoURL = user.photoURL;
+      //       var uid = user.uid;
+      //       var phoneNumber = user.phoneNumber;
+      //       var providerData = user.providerData;
+      //       user.getIdToken().then(function(accessToken) {
+      //         document.getElementById('sign-in-status').textContent = 'Signed in';
+      //         document.getElementById('sign-in').textContent = 'Sign out';
+      //         document.getElementById('account-details').textContent = JSON.stringify({
+      //           displayName: displayName,
+      //           email: email,
+      //           emailVerified: emailVerified,
+      //           phoneNumber: phoneNumber,
+      //           photoURL: photoURL,
+      //           uid: uid,
+      //           accessToken: accessToken,
+      //           providerData: providerData
+      //         }, null, '  ');
+      //       });
+      //       //add sign out function
 
-            $('#sign-in').on("click", function(){
-              event.preventDefault();
-              console.log("testing sign out button");
+      //       $('#sign-in').on("click", function(){
+      //         event.preventDefault();
+      //         console.log("testing sign out button");
               
-              firebase.auth().signOut().then(function() {
-                // Sign-out successful.
-              }).catch(function(error) {
-                // An error happened.
-              });
-            });
-          } else {
-            // User is signed out.
-            document.getElementById('sign-in-status').textContent = 'Signed out';
-            document.getElementById('sign-in').textContent = 'Sign in';
-            document.getElementById('account-details').textContent = 'null';
-          }
-        }, function(error) {
-          console.log(error);
-        });
-      };
+      //         firebase.auth().signOut().then(function() {
+      //           // Sign-out successful.
+      //         }).catch(function(error) {
+      //           // An error happened.
+      //         });
+      //       });
+      //     } else {
+      //       // User is signed out.
+      //       document.getElementById('sign-in-status').textContent = 'Signed out';
+      //       document.getElementById('sign-in').textContent = 'Sign in';
+      //       document.getElementById('account-details').textContent = 'null';
+      //     }
+      //   }, function(error) {
+      //     console.log(error);
+      //   });
+      // };
 
-      window.addEventListener('load', function() {
-        initApp()
-      });
+      // window.addEventListener('load', function() {
+      //   initApp()
+      // });
     </script>
   </head>
-  <body>
+<body>
+  <div class = "container">
     <h1>Welcome to My Awesome App</h1>
-    <div id="firebaseui-auth-container"></div>
-    <div id="sign-in-status"></div>
-    <div id="sign-in"></div>
-    <div id="account-details"></div>
-    <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
-  </body>
+    <div class = "row">
+      <div class = "col-md-4 form-intake">
+        <h2 class = "section-head">Submit A Train</h2>
+        <div class="form-group row">
+          <label for="example-text-input" class="col-2 col-form-label">Train Name</label>
+          <div class="col-10">
+            <input class="form-control" type="text" id="train-name-input">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-search-input" class="col-2 col-form-label">Destination</label>
+          <div class="col-10">
+            <input class="form-control" type="search" id="destination-input">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-email-input" class="col-2 col-form-label">First Train Time (HH:mm - military time)</label>
+          <div class="col-10">
+            <input class="form-control date-time-collected" type="email" id="first-train-time-input">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="example-url-input" class="col-2 col-form-label">Frequency (min)</label>
+          <div class="col-10">
+            <input class="form-control" type="url" id="frequency-input">
+          </div>
+        </div>
+        <button id = "form-submission" type="submit" class="btn btn-primary">Submit</button>
+      </div>
+      <div id="firebaseui-auth-container" class = "col-md-4"></div>
+    </div>
+    <div class = "row">
+      <div class = "col-md-4 mt-4">
+        <div id="sign-in-status"></div>
+        <div id="sign-in"></div>
+        <div id="account-details"></div>
+        <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
+      </div> 
+    </div>
+  </div>
+  <script type="text/javascript" src="assets/app.js"></script>
+</body>
 </html>
