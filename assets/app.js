@@ -12,29 +12,22 @@ firebase.initializeApp(config);
 // Create a variable to reference the database
 var database = firebase.database();
 
-$("#form-submission").on("click", function(event) {
-	// Prevent default behavior
-	event.preventDefault();
+// $("#form-submission").on("click", function(event) {
+// // Prevent default behavior
+// event.preventDefault();
 
-	trainName = $("#train-name-input").val().trim();
-	destination = $("#destination-input").val().trim();
-	firstTrainTime = $("#first-train-time-input").val().trim();
-	tFrequency = $("#frequency-input").val().trim();
+// trainName = $("#train-name-input").val().trim();
+// destination = $("#destination-input").val().trim();
+// firstTrainTime = $("#first-train-time-input").val().trim();
+// tFrequency = $("#frequency-input").val().trim();
 
-
-	firebase.database().ref('users/' + userId + 'newData').set({
-	  username: name,
-	  email: email,
-	  profile_picture : imageUrl
-	});
-
-	// database.ref().push({
-	//   name: trainName ,
-	//   destination: destination,
-	//   firstTrainTime: firstTrainTime,
-	//   frequency: tFrequency  
-	// });
-});
+// database.ref().push({
+//     name: trainName ,
+//     destination: destination,
+//     firstTrainTime: firstTrainTime,
+//     frequency: tFrequency  
+//   });
+// });
 
 // FirebaseUI config.
 var uiConfig = {
@@ -65,6 +58,26 @@ function writeUserData(userId, name, email, imageUrl) {
   });
 }
 
+function pushUserData(userId) {
+
+	$("#form-submission").on("click", function(event) {
+		// Prevent default behavior
+		event.preventDefault();
+
+		trainName = $("#train-name-input").val().trim();
+		destination = $("#destination-input").val().trim();
+		firstTrainTime = $("#first-train-time-input").val().trim();
+		tFrequency = $("#frequency-input").val().trim();
+
+		database.ref('users/' + userId + '/newData').push({
+	    name: trainName ,
+	    destination: destination,
+	    firstTrainTime: firstTrainTime,
+	    frequency: tFrequency  
+	  });
+	});
+}
+
 initApp = function() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
@@ -79,6 +92,7 @@ initApp = function() {
 
       //write user data to database
       writeUserData(uid, displayName, email, photoURL);
+      push(uid);
 
       user.getIdToken().then(function(accessToken) {
         document.getElementById('sign-in-status').textContent = 'Signed in';

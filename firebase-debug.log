@@ -1,0 +1,104 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/Cellar/node/8.1.2/bin/node /usr/local/bin/firebase serve
+[debug] CLI Version:  3.9.0
+[debug] Platform:     darwin
+[debug] Node Version: v8.1.2
+[debug] Time:         Mon Sep 04 2017 16:32:17 GMT-0700 (PDT)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/xhGhooizhANth1jvnrfclbdAHDSQl8zuTUpWw4FHq9k',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Sep 04 2017 16:32:17 GMT-0700 (PDT)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/fir-auth-755f9  
+ Mon Sep 04 2017 16:32:17 GMT-0700 (PDT)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/fir-auth-755f9/tokens  
+ Mon Sep 04 2017 16:32:18 GMT-0700 (PDT)
+[debug] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/darrenkwong/firebase-auth-test'...
+[info] 
+[debug] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-auth-755f9  
+ Mon Sep 04 2017 16:32:18 GMT-0700 (PDT)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/688777003307/clients/_:getWebAppConfig  
+ Mon Sep 04 2017 16:32:19 GMT-0700 (PDT)
+[debug] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[debug] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-auth-755f9  
+ Mon Sep 04 2017 16:32:19 GMT-0700 (PDT)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/688777003307/clients/_:getWebAppConfig  
+ Mon Sep 04 2017 16:32:19 GMT-0700 (PDT)
+[debug] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5004 is not available. Trying another port...
+[debug] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-auth-755f9  
+ Mon Sep 04 2017 16:32:20 GMT-0700 (PDT)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/688777003307/clients/_:getWebAppConfig  
+ Mon Sep 04 2017 16:32:20 GMT-0700 (PDT)
+[debug] <<< HTTP RESPONSE 200
+[debug] TypeError: Cannot read property 'public' of undefined
+    at Server.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/serve/hosting.js:34:17)
+    at Object.onceWrapper (events.js:314:30)
+    at emitNone (events.js:105:13)
+    at Server.emit (events.js:207:7)
+    at emitListeningNT (net.js:1334:10)
+    at _combinedTickCallback (internal/process/next_tick.js:99:11)
+    at process._tickCallback (internal/process/next_tick.js:161:9)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/Cellar/node/8.1.2/bin/node /usr/local/bin/firebase serve
+[debug] CLI Version:  3.9.0
+[debug] Platform:     darwin
+[debug] Node Version: v8.1.2
+[debug] Time:         Mon Sep 04 2017 16:32:49 GMT-0700 (PDT)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/fir-auth-755f9  
+ Mon Sep 04 2017 16:32:49 GMT-0700 (PDT)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/fir-auth-755f9/tokens  
+ Mon Sep 04 2017 16:32:49 GMT-0700 (PDT)
+[debug] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/darrenkwong/firebase-auth-test'...
+[info] 
+[debug] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-auth-755f9  
+ Mon Sep 04 2017 16:32:50 GMT-0700 (PDT)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/688777003307/clients/_:getWebAppConfig  
+ Mon Sep 04 2017 16:32:50 GMT-0700 (PDT)
+[debug] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[debug] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-auth-755f9  
+ Mon Sep 04 2017 16:32:51 GMT-0700 (PDT)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/688777003307/clients/_:getWebAppConfig  
+ Mon Sep 04 2017 16:32:51 GMT-0700 (PDT)
+[debug] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5004 is not available. Trying another port...
+[debug] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-auth-755f9  
+ Mon Sep 04 2017 16:32:51 GMT-0700 (PDT)
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/688777003307/clients/_:getWebAppConfig  
+ Mon Sep 04 2017 16:32:52 GMT-0700 (PDT)
+[debug] <<< HTTP RESPONSE 200
+[debug] TypeError: Cannot read property 'public' of undefined
+    at Server.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/serve/hosting.js:34:17)
+    at Object.onceWrapper (events.js:314:30)
+    at emitNone (events.js:105:13)
+    at Server.emit (events.js:207:7)
+    at emitListeningNT (net.js:1334:10)
+    at _combinedTickCallback (internal/process/next_tick.js:99:11)
+    at process._tickCallback (internal/process/next_tick.js:161:9)
+[error] 
+[error] Error: An unexpected error has occurred.

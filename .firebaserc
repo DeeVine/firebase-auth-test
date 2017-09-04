@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "fir-auth-755f9"
+    "default": "fir-auth-755f9",
+    "testing2": "fir-auth-755f9"
   }
 }
