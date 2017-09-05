@@ -78,7 +78,7 @@ function setupClickEvent(userId) {
 	});
 }
 
-database.ref('users/' + userId).on("value", function(snapshot){
+database.ref('users/').on("value", function(snapshot){
 	console.log(snapshot.val());
 });
 
