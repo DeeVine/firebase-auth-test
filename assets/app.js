@@ -102,6 +102,7 @@ initApp = function() {
 				else {
 					//write user data to database if new user
       		writeUserData(uid, displayName, email, photoURL, phoneNumber);
+      		console.log("no user data, adding new user");
 				}
 			});
       
