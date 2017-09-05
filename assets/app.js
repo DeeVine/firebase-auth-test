@@ -55,7 +55,7 @@ function setupClickEvent(userId) {
 		input3 = $("#input-3").val().trim();
 		input4 = $("#input-4").val().trim();
 
-		database.ref('users/' + userId + '/newData').push({
+		database.ref('users/' + userId + '/userData').push({
 	    input1: input1,
 	    input2: input2,
 	    input3: input3,
