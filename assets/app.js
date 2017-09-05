@@ -76,6 +76,10 @@ initApp = function() {
       var phoneNumber = user.phoneNumber;
       var providerData = user.providerData;
 
+      database.ref('users/' + uid + '/userData').on("value", function(snapshot){
+				console.log(snapshot.val());
+			});
+
       //check if user exists, otherwise write in new user data
       database.ref('users/' + uid).once("value", function(snapshot){
 				console.log(snapshot.val());
