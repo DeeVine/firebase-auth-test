@@ -58,7 +58,7 @@ function writeUserData(userId, name, email, imageUrl) {
   });
 }
 
-function pushUserData(userId) {
+function setupClickEvent(userId) {
 
 	$("#form-submission").on("click", function(event) {
 		// Prevent default behavior
@@ -78,6 +78,10 @@ function pushUserData(userId) {
 	});
 }
 
+database.ref('users/' + userId).on("value", function(snapshot){
+	console.log(snapshot.val());
+}
+
 initApp = function() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
@@ -90,9 +94,10 @@ initApp = function() {
       var phoneNumber = user.phoneNumber;
       var providerData = user.providerData;
 
-      //write user data to database
+      //write user data to database if new user
       writeUserData(uid, displayName, email, photoURL);
-      pushUserData(uid);
+      //add click event to button when person is logged in
+      setupClickEvent(uid);
 
       user.getIdToken().then(function(accessToken) {
         document.getElementById('sign-in-status').textContent = 'Signed in';
