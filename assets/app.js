@@ -80,7 +80,7 @@ function setupClickEvent(userId) {
 
 database.ref('users/' + userId).on("value", function(snapshot){
 	console.log(snapshot.val());
-}
+});
 
 initApp = function() {
   firebase.auth().onAuthStateChanged(function(user) {
