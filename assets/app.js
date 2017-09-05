@@ -78,10 +78,6 @@ function setupClickEvent(userId) {
 	});
 }
 
-database.ref('users/').on("value", function(snapshot){
-	console.log(snapshot.val());
-});
-
 initApp = function() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
@@ -94,8 +90,18 @@ initApp = function() {
       var phoneNumber = user.phoneNumber;
       var providerData = user.providerData;
 
-      //write user data to database if new user
-      writeUserData(uid, displayName, email, photoURL);
+
+      database.ref('users/').on("value", function(snapshot){
+				console.log(snapshot.val());
+				if (snapshot.val()){
+					console.log("data for user exists, do not write over user data")
+				}
+				else {
+					//write user data to database if new user
+      		writeUserData(uid, displayName, email, photoURL);
+				}
+			});
+      
       //add click event to button when person is logged in
       setupClickEvent(uid);
 
