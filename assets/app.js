@@ -67,16 +67,16 @@ function setupClickEvent(userId) {
 		// Prevent default behavior
 		event.preventDefault();
 
-		trainName = $("#train-name-input").val().trim();
-		destination = $("#destination-input").val().trim();
-		firstTrainTime = $("#first-train-time-input").val().trim();
-		tFrequency = $("#frequency-input").val().trim();
+		input1 = $("#input-1").val().trim();
+		input2 = $("#input-2").val().trim();
+		input3 = $("#input-3").val().trim();
+		input4 = $("#input-4").val().trim();
 
 		database.ref('users/' + userId + '/newData').push({
-	    name: trainName ,
-	    destination: destination,
-	    firstTrainTime: firstTrainTime,
-	    frequency: tFrequency  
+	    input1: input1,
+	    input2: input2,
+	    input3: input3,
+	    input4: input4  
 	  });
 	});
 }
