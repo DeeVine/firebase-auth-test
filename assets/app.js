@@ -91,7 +91,7 @@ initApp = function() {
       var providerData = user.providerData;
 
 
-      database.ref('users/').on("value", function(snapshot){
+      database.ref('users/').once("value", function(snapshot){
 				console.log(snapshot.val());
 				if (snapshot.val()){
 					console.log("data for user exists, do not write over user data")
