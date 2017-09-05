@@ -78,6 +78,7 @@ initApp = function() {
 
       database.ref('users/' + uid + '/userData').on("value", function(snapshot){
 				console.log(snapshot.val());
+				console.log(snapshot.val()[0]);
 			});
 
       //check if user exists, otherwise write in new user data
