@@ -51,11 +51,12 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
 ui.start('#firebaseui-auth-container', uiConfig);
 
 //writes new user data to database
-function writeUserData(userId, name, email, imageUrl) {
+function writeUserData(userId, name, email, imageUrl, phoneNumber) {
   firebase.database().ref('users/' + userId).set({
     username: name,
     email: email,
     profile_picture : imageUrl
+    phoneNumber: phoneNumber
   });
 }
 
@@ -100,7 +101,7 @@ initApp = function() {
 				}
 				else {
 					//write user data to database if new user
-      		writeUserData(uid, displayName, email, photoURL);
+      		writeUserData(uid, displayName, email, photoURL, phoneNumber);
 				}
 			});
       
