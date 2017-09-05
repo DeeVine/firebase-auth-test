@@ -50,6 +50,7 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
 // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
 
+//writes new user data to database
 function writeUserData(userId, name, email, imageUrl) {
   firebase.database().ref('users/' + userId).set({
     username: name,
@@ -58,6 +59,7 @@ function writeUserData(userId, name, email, imageUrl) {
   });
 }
 
+//add click event to push data to user's data node
 function setupClickEvent(userId) {
 
 	$("#form-submission").on("click", function(event) {
@@ -90,8 +92,8 @@ initApp = function() {
       var phoneNumber = user.phoneNumber;
       var providerData = user.providerData;
 
-
-      database.ref('users/').once("value", function(snapshot){
+      //check if user exists, otherwise write in new user data
+      database.ref('users/' + uid).once("value", function(snapshot){
 				console.log(snapshot.val());
 				if (snapshot.val()){
 					console.log("data for user exists, do not write over user data")
