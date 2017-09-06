@@ -78,8 +78,10 @@ initApp = function() {
 
       database.ref('users/' + uid + '/userData').on("value", function(snapshot){
 				console.log(snapshot.val());
-				console.log(snapshot.val()[0]);
 			});
+
+			var query = database.ref('users/' + uid + '/userData');
+			console.log (query);
 
       //check if user exists, otherwise write in new user data
       database.ref('users/' + uid).once("value", function(snapshot){
@@ -94,7 +96,7 @@ initApp = function() {
 				}
 			});
       
-      //add click event to button when person is logged in
+      //add click event to button when user is logged in
       setupClickEvent(uid);
 
       user.getIdToken().then(function(accessToken) {
