@@ -15,6 +15,7 @@ var database = firebase.database();
 // FirebaseUI config.
 var uiConfig = {
   signInSuccessUrl: 'https://deevine.github.io/firebase-auth-test/',
+  // signInSuccessUrl: 'localhost:5008',
   signInOptions: [
     // Leave the lines as is for the providers you want to offer your users.
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -80,8 +81,22 @@ initApp = function() {
 				console.log(snapshot.val());
 			});
 
+      //query user data
 			var query = database.ref('users/' + uid + '/userData');
-			console.log (query);
+			query.once("value")
+			.then(function(snapshot) {
+	    snapshot.forEach(function(childSnapshot) {
+	      // key of each child being iterated over
+	      var key = childSnapshot.key;
+	      // childData will be the actual contents of the child
+	      var childData = childSnapshot.val();
+
+	      console.log("key is " + key);
+	      console.log("child data is " +childData);
+	      console.log("input1 value is " + childData.input1);
+
+			  });
+			});
 
       //check if user exists, otherwise write in new user data
       database.ref('users/' + uid).once("value", function(snapshot){

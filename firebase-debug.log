@@ -1,104 +1,78 @@
-[debug] ----------------------------------------------------------------------
-[debug] Command:      /usr/local/Cellar/node/8.1.2/bin/node /usr/local/bin/firebase serve
-[debug] CLI Version:  3.9.0
-[debug] Platform:     darwin
-[debug] Node Version: v8.1.2
-[debug] Time:         Mon Sep 04 2017 16:32:17 GMT-0700 (PDT)
-[debug] ----------------------------------------------------------------------
+[debug] [2017-09-06T00:28:57.963Z] ----------------------------------------------------------------------
+[debug] [2017-09-06T00:28:57.966Z] Command:       /usr/local/Cellar/node/8.1.2/bin/node /usr/local/bin/firebase serve
+[debug] [2017-09-06T00:28:57.966Z] CLI Version:   3.10.0
+[debug] [2017-09-06T00:28:57.966Z] Platform:      darwin
+[debug] [2017-09-06T00:28:57.966Z] Node Version:  v8.1.2
+[debug] [2017-09-06T00:28:57.967Z] Time:          Tue Sep 05 2017 17:28:57 GMT-0700 (PDT)
+[debug] [2017-09-06T00:28:57.967Z] ----------------------------------------------------------------------
 [debug] 
-[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/xhGhooizhANth1jvnrfclbdAHDSQl8zuTUpWw4FHq9k',
+[debug] [2017-09-06T00:28:57.982Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-06T00:28:57.982Z] > authorizing via signed-in user
+[debug] [2017-09-06T00:28:57.984Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-09-06T00:28:57.984Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/xhGhooizhANth1jvnrfclbdAHDSQl8zuTUpWw4FHq9k',
   client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
   client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
   grant_type: 'refresh_token',
   scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Mon Sep 04 2017 16:32:17 GMT-0700 (PDT)
-[debug] <<< HTTP RESPONSE 200
-[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/fir-auth-755f9  
- Mon Sep 04 2017 16:32:17 GMT-0700 (PDT)
-[debug] <<< HTTP RESPONSE 200
-[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/fir-auth-755f9/tokens  
- Mon Sep 04 2017 16:32:18 GMT-0700 (PDT)
-[debug] <<< HTTP RESPONSE 200
+ Tue Sep 05 2017 17:28:57 GMT-0700 (PDT)
+[debug] [2017-09-06T00:28:58.153Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-06T00:28:58.161Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/fir-auth-755f9  
+ Tue Sep 05 2017 17:28:58 GMT-0700 (PDT)
+[debug] [2017-09-06T00:28:58.628Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-06T00:28:58.629Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/fir-auth-755f9/tokens  
+ Tue Sep 05 2017 17:28:58 GMT-0700 (PDT)
+[debug] [2017-09-06T00:28:59.114Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from '/Users/darrenkwong/firebase-auth-test'...
 [info] 
-[debug] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-auth-755f9  
- Mon Sep 04 2017 16:32:18 GMT-0700 (PDT)
-[debug] <<< HTTP RESPONSE 200
-[debug] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/688777003307/clients/_:getWebAppConfig  
- Mon Sep 04 2017 16:32:19 GMT-0700 (PDT)
-[debug] <<< HTTP RESPONSE 200
-[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
-[debug] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-auth-755f9  
- Mon Sep 04 2017 16:32:19 GMT-0700 (PDT)
-[debug] <<< HTTP RESPONSE 200
-[debug] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/688777003307/clients/_:getWebAppConfig  
- Mon Sep 04 2017 16:32:19 GMT-0700 (PDT)
-[debug] <<< HTTP RESPONSE 200
-[warn] ⚠  hosting: Port 5004 is not available. Trying another port...
-[debug] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-auth-755f9  
- Mon Sep 04 2017 16:32:20 GMT-0700 (PDT)
-[debug] <<< HTTP RESPONSE 200
-[debug] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/688777003307/clients/_:getWebAppConfig  
- Mon Sep 04 2017 16:32:20 GMT-0700 (PDT)
-[debug] <<< HTTP RESPONSE 200
-[debug] TypeError: Cannot read property 'public' of undefined
-    at Server.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/serve/hosting.js:34:17)
-    at Object.onceWrapper (events.js:314:30)
-    at emitNone (events.js:105:13)
-    at Server.emit (events.js:207:7)
-    at emitListeningNT (net.js:1334:10)
-    at _combinedTickCallback (internal/process/next_tick.js:99:11)
-    at process._tickCallback (internal/process/next_tick.js:161:9)
-[error] 
-[error] Error: An unexpected error has occurred.
-[debug] ----------------------------------------------------------------------
-[debug] Command:      /usr/local/Cellar/node/8.1.2/bin/node /usr/local/bin/firebase serve
-[debug] CLI Version:  3.9.0
-[debug] Platform:     darwin
-[debug] Node Version: v8.1.2
-[debug] Time:         Mon Sep 04 2017 16:32:49 GMT-0700 (PDT)
-[debug] ----------------------------------------------------------------------
+[debug] [2017-09-06T00:28:59.117Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-auth-755f9  
+ Tue Sep 05 2017 17:28:59 GMT-0700 (PDT)
+[debug] [2017-09-06T00:28:59.529Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-06T00:28:59.530Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/688777003307/clients/_:getWebAppConfig  
+ Tue Sep 05 2017 17:28:59 GMT-0700 (PDT)
+[debug] [2017-09-06T00:28:59.818Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./
+[info] ✔  hosting: Local server: http://localhost:5000
+
+[debug] [2017-09-06T00:47:27.148Z] ----------------------------------------------------------------------
+[debug] [2017-09-06T00:47:27.150Z] Command:       /usr/local/Cellar/node/8.1.2/bin/node /usr/local/bin/firebase serve
+[debug] [2017-09-06T00:47:27.151Z] CLI Version:   3.10.0
+[debug] [2017-09-06T00:47:27.151Z] Platform:      darwin
+[debug] [2017-09-06T00:47:27.151Z] Node Version:  v8.1.2
+[debug] [2017-09-06T00:47:27.151Z] Time:          Tue Sep 05 2017 17:47:27 GMT-0700 (PDT)
+[debug] [2017-09-06T00:47:27.151Z] ----------------------------------------------------------------------
 [debug] 
-[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/fir-auth-755f9  
- Mon Sep 04 2017 16:32:49 GMT-0700 (PDT)
-[debug] <<< HTTP RESPONSE 200
-[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/fir-auth-755f9/tokens  
- Mon Sep 04 2017 16:32:49 GMT-0700 (PDT)
-[debug] <<< HTTP RESPONSE 200
+[debug] [2017-09-06T00:47:27.166Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-09-06T00:47:27.167Z] > authorizing via signed-in user
+[debug] [2017-09-06T00:47:27.169Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/fir-auth-755f9  
+ Tue Sep 05 2017 17:47:27 GMT-0700 (PDT)
+[debug] [2017-09-06T00:47:27.706Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-06T00:47:27.708Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/fir-auth-755f9/tokens  
+ Tue Sep 05 2017 17:47:27 GMT-0700 (PDT)
+[debug] [2017-09-06T00:47:28.148Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from '/Users/darrenkwong/firebase-auth-test'...
 [info] 
-[debug] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-auth-755f9  
- Mon Sep 04 2017 16:32:50 GMT-0700 (PDT)
-[debug] <<< HTTP RESPONSE 200
-[debug] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/688777003307/clients/_:getWebAppConfig  
- Mon Sep 04 2017 16:32:50 GMT-0700 (PDT)
-[debug] <<< HTTP RESPONSE 200
+[debug] [2017-09-06T00:47:28.152Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-auth-755f9  
+ Tue Sep 05 2017 17:47:28 GMT-0700 (PDT)
+[debug] [2017-09-06T00:47:28.559Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-06T00:47:28.559Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/688777003307/clients/_:getWebAppConfig  
+ Tue Sep 05 2017 17:47:28 GMT-0700 (PDT)
+[debug] [2017-09-06T00:47:28.868Z] <<< HTTP RESPONSE 200
 [warn] ⚠  hosting: Port 5000 is not available. Trying another port...
-[debug] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-auth-755f9  
- Mon Sep 04 2017 16:32:51 GMT-0700 (PDT)
-[debug] <<< HTTP RESPONSE 200
-[debug] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/688777003307/clients/_:getWebAppConfig  
- Mon Sep 04 2017 16:32:51 GMT-0700 (PDT)
-[debug] <<< HTTP RESPONSE 200
+[debug] [2017-09-06T00:47:28.900Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-auth-755f9  
+ Tue Sep 05 2017 17:47:28 GMT-0700 (PDT)
+[debug] [2017-09-06T00:47:29.217Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-06T00:47:29.218Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/688777003307/clients/_:getWebAppConfig  
+ Tue Sep 05 2017 17:47:29 GMT-0700 (PDT)
+[debug] [2017-09-06T00:47:29.503Z] <<< HTTP RESPONSE 200
 [warn] ⚠  hosting: Port 5004 is not available. Trying another port...
-[debug] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-auth-755f9  
- Mon Sep 04 2017 16:32:51 GMT-0700 (PDT)
-[debug] <<< HTTP RESPONSE 200
-[debug] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/688777003307/clients/_:getWebAppConfig  
- Mon Sep 04 2017 16:32:52 GMT-0700 (PDT)
-[debug] <<< HTTP RESPONSE 200
-[debug] TypeError: Cannot read property 'public' of undefined
-    at Server.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/serve/hosting.js:34:17)
-    at Object.onceWrapper (events.js:314:30)
-    at emitNone (events.js:105:13)
-    at Server.emit (events.js:207:7)
-    at emitListeningNT (net.js:1334:10)
-    at _combinedTickCallback (internal/process/next_tick.js:99:11)
-    at process._tickCallback (internal/process/next_tick.js:161:9)
-[error] 
-[error] Error: An unexpected error has occurred.
+[debug] [2017-09-06T00:47:29.507Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fir-auth-755f9  
+ Tue Sep 05 2017 17:47:29 GMT-0700 (PDT)
+[debug] [2017-09-06T00:47:29.798Z] <<< HTTP RESPONSE 200
+[debug] [2017-09-06T00:47:29.799Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/688777003307/clients/_:getWebAppConfig  
+ Tue Sep 05 2017 17:47:29 GMT-0700 (PDT)
+[debug] [2017-09-06T00:47:30.047Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./
+[info] ✔  hosting: Local server: http://localhost:5008
+
